@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAsterisk, faCheck, faExclamation, faLink, faPaperclip } from '@fortawesome/free-solid-svg-icons'
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
-export default function DisplayProgress({names}) {
+export function InnerDisplayProgress({names}) {
   const getProgress = (names) => {
     return names.map((name) => `lb-${name}`).map((key) => localStorage.getItem(key)||"none")
   }
@@ -28,5 +29,11 @@ export default function DisplayProgress({names}) {
     return () => window.removeEventListener('storage', handleStorage)
   }, [])
   return (<div className="sq-outer">{squares}</div>);
+}
+
+export default function DisplayProgress({names}) {
+  return (<BrowserOnly fallback={(<div>loading...</div>)}>
+    {() => (<InnerDisplayProgress names={names} />)}
+  </BrowserOnly>);
 }
 

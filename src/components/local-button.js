@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAsterisk, faCheck, faExclamation, faLink, faPaperclip } from '@fortawesome/free-solid-svg-icons'
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
-
-export default function LocalButton({name}) {
+export function InnerLocalButton({name}) {
   const [toggle, setToggle] = useState(localStorage.getItem(`lb-${name}`))
   useEffect(() => {
     localStorage.setItem(`lb-${name}`, toggle)
@@ -24,4 +24,10 @@ export default function LocalButton({name}) {
       setToggle("none")
     }
   }}>{icon}</div>)
+}
+
+export default function LocalButton({name}) {
+  return (<BrowserOnly fallback={(<div>loading...</div>)}>
+    {() => (<InnerLocalButton name={name} />)}
+    </BrowserOnly>);
 }

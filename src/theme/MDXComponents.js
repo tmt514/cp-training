@@ -12,7 +12,7 @@ export default {
   ...MDXComponents,
   // Map the "<Highlight>" tag to our Highlight component
   // `Highlight` will receive all props that were passed to `<Highlight>` in MDX
-  Highlight,
+  // Highlight,
   Tabs,
   TabItem,
   LocalButton,

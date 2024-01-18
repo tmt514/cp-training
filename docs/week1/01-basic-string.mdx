@@ -1,11 +1,12 @@
 ---
 sidebar_position: 2
-exercises: ['kattis-heimavinna', 'kattis-drunkvigenere', 'kattis-hidingplaces']
+exercises: ['kattis-heimavinna', 'kattis-drunkvigenere', 'kattis-hidingplaces', 'leetcode-text-justification']
+title: Basic String Manipulations
 ---
 
 <DisplayProgress names={frontMatter.exercises}/>
 
-# Basic String Manipulations
+# {frontMatter.title}
 
 There are three important operations for strings: **splitting**, **appending**, and **type conversion**.
 Fortunately, for Java and Python we already have libraries that help us accomplish these tasks.
@@ -40,8 +41,17 @@ Java strings are **immutable**, which means that whenever you attempt to append 
 To resolve this issue, you can either use `ArrayList` or `StringBuilder`.
 
 ```java
-String input = Scanner.nextLine()
-String[] strs = input.trim().split()
+public class arraylist {
+  public static void main(String[] args) {
+    ArrayList<String> strings = new ArrayList<String>();
+    strings.add("one");
+    strings.add("two");
+    strings.add("three");
+    strings.add("four");
+    String all = String.join("+", strings);
+    System.out.println(all);
+  }
+}
 ```
 
   </TabItem>
@@ -59,17 +69,19 @@ strs = input().strip().split()
 <Tabs groupId="programming-language">
   <TabItem value="java" label="Java">
 
+We can use `Integer.parseInt()` to obtain an integer from a string.
 
 ```java
-String input = Scanner.nextLine()
-String[] strs = input.trim().split()
+String input = Scanner.nextLine();
+int val = Integer.parseInt(input);
 ```
 
   </TabItem>
   <TabItem value="py" label="Python">
 
 ```py 
-strs = input().strip().split()
+val = input()
+int(val)
 ```
 
   </TabItem>
@@ -82,3 +94,4 @@ strs = input().strip().split()
 | <LocalButton name='kattis-heimavinna'/> | [Homework](https://open.kattis.com/problems/heimavinna) | String Splitting. |
 | <LocalButton name='kattis-drunkvigenere'/> | [Drunk Vigenère](https://open.kattis.com/problems/drunkvigenere) | Convert between characters and numbers. |
 | <LocalButton name='kattis-hidingplaces'/> | [Hiding Places](https://open.kattis.com/problems/hidingplaces) | Convert between characters and numbers. |
+| <LocalButton name='leetcode-text-justification'/> | [Leetcode 68. Text Justification](https://leetcode.com/problems/text-justification/) | Computing lengths and appending spaces. |
