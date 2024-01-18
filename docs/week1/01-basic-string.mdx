@@ -1,0 +1,84 @@
+---
+sidebar_position: 2
+exercises: ['kattis-heimavinna', 'kattis-drunkvigenere', 'kattis-hidingplaces']
+---
+
+<DisplayProgress names={frontMatter.exercises}/>
+
+# Basic String Manipulations
+
+There are three important operations for strings: **splitting**, **appending**, and **type conversion**.
+Fortunately, for Java and Python we already have libraries that help us accomplish these tasks.
+
+## Splitting
+
+<Tabs groupId="programming-language">
+  <TabItem value="java" label="Java">
+
+
+```java
+String input = Scanner.nextLine()
+String[] strs = input.trim().split()
+```
+
+  </TabItem>
+  <TabItem value="py" label="Python">
+
+```py 
+strs = input().strip().split()
+```
+
+  </TabItem>
+</Tabs>
+
+## Appending
+
+<Tabs groupId="programming-language">
+  <TabItem value="java" label="Java">
+
+Java strings are **immutable**, which means that whenever you attempt to append a character (or other string) to the existing one, you must allocate a new string. Therefore, the naive way to appending $n$ characters to a string actually takes $O(n^2)$ time!
+To resolve this issue, you can either use `ArrayList` or `StringBuilder`.
+
+```java
+String input = Scanner.nextLine()
+String[] strs = input.trim().split()
+```
+
+  </TabItem>
+  <TabItem value="py" label="Python">
+
+```py 
+strs = input().strip().split()
+```
+
+  </TabItem>
+</Tabs>
+
+## Type Conversion
+
+<Tabs groupId="programming-language">
+  <TabItem value="java" label="Java">
+
+
+```java
+String input = Scanner.nextLine()
+String[] strs = input.trim().split()
+```
+
+  </TabItem>
+  <TabItem value="py" label="Python">
+
+```py 
+strs = input().strip().split()
+```
+
+  </TabItem>
+</Tabs>
+
+## Exercises
+
+| | Problem | Notes |
+|---|---|---|
+| <LocalButton name='kattis-heimavinna'/> | [Homework](https://open.kattis.com/problems/heimavinna) | String Splitting. |
+| <LocalButton name='kattis-drunkvigenere'/> | [Drunk Vigenère](https://open.kattis.com/problems/drunkvigenere) | Convert between characters and numbers. |
+| <LocalButton name='kattis-hidingplaces'/> | [Hiding Places](https://open.kattis.com/problems/hidingplaces) | Convert between characters and numbers. |
